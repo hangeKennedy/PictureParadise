@@ -1,0 +1,388 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
+
+/* ! -------------------------------- reset ------------------------------- ! */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+    box-sizing: border-box;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* ! -------------------------------- custom ------------------------------- ! */
+:root {
+    --primary-blue : #3274e4;
+    --dark-blue: #2b62c0;
+    --light-blue : #B4CFFD;
+    --white: #FFFFFF;
+    --gray: #A0ABBD;
+    --wallpaper-border: #c5c5c5;
+    --wallpaper-bg: #f0f0f0;
+}
+* {
+    font-family: 'Comfortaa', cursive !important;
+}
+.d-flex {
+    display: flex;
+}
+.justify-content-between {
+    justify-content: space-between;
+}
+.justify-content-center {
+    justify-content: center;
+}
+.align-items-center {
+    align-items: center;
+}
+.text-capitalize {
+    text-transform: capitalize;
+}
+
+.header {
+    width: 100%;
+    height: 500px;
+    position: relative;
+    padding: 25px 50px 20px 50px;
+}
+.header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(./assets/desert.jpg);
+    background-size: cover;
+    background-position: 0 30%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+.header::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    opacity: 0.4;
+    z-index: -1;
+}
+/* ! -------------------------------- container ------------------------------- ! */
+.container {
+    height: 100%;
+    width: 100%;
+    max-width: 1920px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+/* ! --------------------------------- navbar --------------------------------- ! */
+.navbar {
+    max-width: 1920px;
+}
+.github-btn {
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: var(--primary-blue);
+    background: var(--white);
+    border-radius: 8px;
+    padding: 8px 20px;
+    transition: .3s;
+}
+.github-btn svg {
+    margin-left: 11px;
+}
+.github-btn:hover {
+    filter: brightness(0.9);
+}
+.header-main-title {
+    font-size: 2.3rem;
+    letter-spacing: 1px;
+    color: var(--white);
+}
+.header-main-title span {
+    color: var(--light-blue);
+}
+.sign-up-sign-in-box {
+    font-size: 1rem;
+}
+.vertical-bar {
+    margin: 0 15px;
+    color: var(--white);
+}
+.sign-up-sign-in-box a {
+    text-decoration: none;
+    color: var(--white);
+}
+/* ! ------------------------------- main header ------------------------------ ! */
+.main-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.main-header-title {
+    font-size: 2.5rem;
+    color: var(--white);
+}
+/* ! ------------------------------ footer header ----------------------------- ! */
+.created-by__title {
+    color: var(--gray);
+}
+.created-by__title a {
+    color: gold;
+}
+.unsplash_Api {
+    color: var(--white);
+    text-decoration: none;
+    padding: 6px 10px;
+    border-radius: 3px;
+    transition: .2s;
+    background:rgb(235, 235, 235, 0.2);
+}
+.flash-down-box {
+    width: 70px;
+    height: 70px;
+    background: var(--primary-blue);
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    border-radius: 20px;
+    border: 5px solid var(--white);
+    cursor: pointer;
+    transition: .3s;
+}
+.flash-down-box svg {
+    transform: rotate(-45deg);
+}
+/* ! ---------------------------------- main ---------------------------------- ! */
+.main {
+    padding: 0 40px;
+    margin: 125px 0 150px 0;
+    justify-content: center;
+}
+.main-wrap {
+    max-width: 1990px;
+    columns: 3;
+    box-sizing: border-box;
+    column-gap: 40px;
+    padding-bottom: 200px;
+}
+
+/* ! ------------------------------- search bar ------------------------------- ! */
+.search-box {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+.search-bar {
+    background: var(--white);
+    width: 50%;
+    height: 60px;
+    border-radius: 20px;
+    padding: 0 10px 0 12px;
+    position: relative;
+    box-shadow: 0 10px 60px -20px var(--white);
+}
+.search-icon {
+    margin-bottom: -3px;
+}
+.search-input {
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    background: none;
+    padding: 0 200px 0 13px;
+    color: var(--primary-blue);
+    font-size: 1.2rem;
+}
+.search-input::placeholder {
+    font-size: 1.2rem;
+    color: #000000;
+}
+/* ! ------------------------------ search order ------------------------------ ! */
+.search-order {
+    border: none;
+    outline: none;
+    padding: 8px;
+    border-radius: 13px;
+    cursor: pointer;
+    background: var(--primary-blue);
+    position: absolute;
+    right: 10px;
+    transition: .3s;
+}
+.search-order-text {
+    color: var(--white);
+    margin: 0 5px;
+    font-size: 1rem;
+}
+.arrow-down-order {
+    transition: .4s;
+}
+.search-order:hover {
+    background: var(--dark-blue);
+}
+/* ! ---------------------------- search order menu --------------------------- ! */
+.search-order-menu {
+    position: absolute;
+    top: 50px;
+    z-index: 9999;
+    width: 100%;
+    border-radius: 20px;
+    background: var(--primary-blue);
+    box-shadow: rgba(100, 100, 111, 0.9) 0px 7px 29px 0px;
+    opacity: 0;
+    visibility: hidden;
+    transition: .4s;
+}
+.search-order-menu ul {
+    padding: 0 12px;
+    cursor: default;
+}
+.search-order-menu-item {
+    margin-top: 12px;
+    border-radius: 10px;
+    background: var(--dark-blue);
+    padding: 10px;
+    color: var(--white);
+    cursor: pointer;
+    transition: .4s;
+    font-size: 1rem;
+}
+.search-order-menu-item.active {
+    background: var(--white);
+    color: var(--dark-blue);
+    box-shadow: 0 0 20px -2px rgba(0, 0, 0, 0.3);
+}
+.search-order-menu-item:last-child {
+    margin-bottom: 12px;
+}
+.search-order-menu-item:hover:not(.search-order-menu-item.active) {
+    background: var(--gray);
+    color: var(--dark-blue);
+    box-shadow: 0 0 20px -2px rgba(0, 0, 0, 0.3);
+}
+.search-order:focus .search-order-menu {
+    visibility: visible;
+    opacity: 1;
+    top: 65px;
+}
+.search-order:focus .arrow-down-order {
+    transform: rotate(180deg);
+}
+/* ! ------------------------------ search submit ----------------------------- ! */
+.search-submit {
+    background: var(--primary-blue);
+    padding: 0;
+    border: none;
+    outline: none;
+    padding: 10px 12px;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-left: 20px;
+    box-shadow: 0 10px 30px -3px var(--primary-blue);
+    transition: .2s;
+}
+.search-submit:hover {
+    background: var(--dark-blue);
+}
+
+
+/* ! ------------------------------- media query ------------------------------ ! */
+@media screen and ( max-width: 1024px ) {
+    .main-wrap {
+        columns: 2;
+    }
+    .search-bar {
+        width: 70%;
+    }
+}
+@media screen and ( max-width: 855px ) {
+    .main-header-title {
+        font-size: 2rem;
+    }
+}
+@media screen and ( max-width: 707px ) {
+    .main-header-title {
+        text-align: center;
+        line-height: 50px;
+    }
+    .sign-up-sign-in-box {
+        display: none;
+    }
+    .navbar {
+        flex-direction: row-reverse;
+    }
+    .main-wrap {
+        columns: 1;
+    }
+    .search-input {
+        padding-right: 0 !important;
+    }
+    .search-order-text {
+        display: none;
+    }
+    .search-order-menu {
+        width: 150px;
+    }
+}
+@media screen and ( max-width: 550px ) {
+    .search-bar {
+        width: 100%;
+    }
+    .created-by__title {
+        display: none;
+    }
+    .unsplash_Api {
+        display: none;
+    }
+}
+@media screen and ( max-width: 510px ) {
+    .github-btn {
+        display: none;
+    }
+    .navbar {
+        justify-content: center;
+    }
+}

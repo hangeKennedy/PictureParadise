@@ -1,0 +1,23 @@
+<form (ngSubmit)="iniciarSesion()" style="margin-top: 5rem;">
+    <div class="imgcontainer">
+        <h1 class="text-capitalize header-main-title fw-bold">
+            <span>PictureParadise</span>
+        </h1>
+    </div>
+    <div class="container">
+        <label class="fw-bold"><b>Usuario</b></label>
+        <input [(ngModel)]="nombreUsuario" type="text" placeholder="Ingresa tu usuario" name="nombreUsuario" required>
+        <br>
+        <label class="fw-bold"><b>Clave</b></label>
+        <input [(ngModel)]="clave" type="password" placeholder="Ingresa tu clave" name="clave" required>
+        
+        <button type="submit">Ingresar</button>
+    </div>
+    
+    <div class="container" style="background-color:#f1f1f1">
+        <button [routerLink]="'/inicio'" type="button" class="cancelbtn">Cancelar</button>
+    </div>
+</form>
+<div *ngIf="errorMensaje" class="error-mensaje" [style.color]="'red'" [style.font-weight]="'bold'" style="text-align: center;">
+    {{ errorMensaje }}
+</div>

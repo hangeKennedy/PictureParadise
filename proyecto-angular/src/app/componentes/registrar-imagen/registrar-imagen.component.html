@@ -1,0 +1,71 @@
+<!-- ! ----------------------------- formulario ----------------------------- ! -->
+<form (ngSubmit)="onSubmit()" method="post">
+    <div class="demo-page">
+        <div class="demo-page-navigation">
+            <br>
+            <br>
+            <img [src]="imagen.imagen" *ngIf="imagen.imagen" class="img-fluid rounded" alt="Url Imagen - Ingrese una URL adecuada!">
+            <!-- <img src="https://images.unsplash.com/photo-1502943693086-33b5b1cfdf2f?auto=format&fit=crop&q=80&w=1374&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-fluid rounded" alt=""> -->
+        </div>
+        <main class="demo-page-content">  
+            <section>
+                <h1>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers">
+                        <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                        <polyline points="2 17 12 22 22 17" />
+                        <polyline points="2 12 12 17 22 12" />
+                    </svg>
+                    Registrar Imagen
+                </h1>
+                <div class="nice-form-group">
+                    <label>Nombre Imagen: </label>
+                    <input [(ngModel)]="imagen.titulo" id="titulo" name="titulo"  type="text" placeholder="Nombre Imagen" />
+                </div>
+                <div class="nice-form-group">
+                    <label>Url Imagen: </label>
+                    <input [(ngModel)]="imagen.imagen" id="imagen" name="imagen" type="url" placeholder="www.imagen.com" class="icon-right" />
+                </div>
+                <div class="nice-form-group">
+                    <label>Selecciona un usuario: </label>
+                    <select [(ngModel)]="imagen.iUsuario" id="iUsuario" name="iUsuario">
+                        <option *ngFor="let u of usuario" [ngValue]="u">
+                            {{ u.nombreUsuario }}
+                        </option>
+                    </select>
+                    <!-- Mostrar la imagen del usuario seleccionado -->
+                    <!-- <img [src]="imagen.iUsuario?.avatar" width="35" height="40" style="object-fit: cover; position: absolute;"> -->
+                    <img [src]="imagen.iUsuario.avatar" width="35" height="40" style="object-fit: cover; position: absolute;">
+                </div>
+                <div class="nice-form-group">
+                    <label>Selecciona una categoría: </label>
+                    <select [(ngModel)]="imagen.iCategoria" id="iCategoria" name="iCategoria">
+                        <option *ngFor="let c of categoria" [ngValue]="c">
+                            {{ c.nombreCategoria }}
+                        </option>
+                    </select>
+                </div>
+                <br>
+                <br>
+                <!-- ! ----------------------------- btns ----------------------------- ! -->
+                <!-- btn-register -->
+                <button class="to-reset me-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-square">
+                        <polyline points="9 11 12 14 22 4" />
+                        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                    </svg>
+                    Registrar Imagen
+                </button>
+                <!-- btn-back -->
+                <a [routerLink]="'/list-images'" class="to-reset bg-danger">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-align-justify">
+                        <line x1="21" y1="10" x2="3" y2="10" />
+                        <line x1="21" y1="6" x2="3" y2="6" />
+                        <line x1="21" y1="14" x2="3" y2="14" />
+                        <line x1="21" y1="18" x2="3" y2="18" />
+                    </svg>
+                    Regresar a lista
+                </a>
+            </section>
+        </main>
+    </div>
+</form>

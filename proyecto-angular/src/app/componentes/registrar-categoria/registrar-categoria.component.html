@@ -1,0 +1,47 @@
+<!-- ! ----------------------------- formulario ----------------------------- ! -->
+<form (ngSubmit)="onSubmit()" method="post">
+    <div class="demo-page">
+        <div class="demo-page-navigation">
+            <br>
+            <br>
+            <img src="https://images.unsplash.com/photo-1477120206578-46b3ca98a4e2?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-fluid rounded" alt="">
+        </div>
+        <main class="demo-page-content">  
+            <section>
+                <h1>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers">
+                        <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                        <polyline points="2 17 12 22 22 17" />
+                        <polyline points="2 12 12 17 22 12" />
+                    </svg>
+                    Registrar Categoría
+                </h1>
+                <div class="nice-form-group">
+                    <label>Título Categoría: </label>
+                    <input [(ngModel)]="categoria.nombreCategoria" id="nombreCategoria" name="nombreCategoria" type="text" placeholder="Nombre categoria. Viaje, Paisaje, etc..." />
+                </div>
+                <br>
+                <br>
+                <!-- ! ----------------------------- btns ----------------------------- ! -->
+                <!-- btn-register -->
+                <button class="to-reset me-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-square">
+                        <polyline points="9 11 12 14 22 4" />
+                        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                    </svg>
+                    Registrar Categoría
+                </button>
+                <!-- btn-back -->
+                <a [routerLink]="'/lista-categorias'" class="to-reset bg-danger">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-align-justify">
+                        <line x1="21" y1="10" x2="3" y2="10" />
+                        <line x1="21" y1="6" x2="3" y2="6" />
+                        <line x1="21" y1="14" x2="3" y2="14" />
+                        <line x1="21" y1="18" x2="3" y2="18" />
+                    </svg>
+                    Regresar a lista
+                </a>
+            </section>
+        </main>
+    </div>
+</form>
